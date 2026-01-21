@@ -45,6 +45,18 @@ a:hover {
     line-height: 1.5rem;
 }
 
+.smaller-text {
+    font-size: .9rem;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+hr {
+    border: .5px dashed #b64901;
+}
+
 #page-structure {
     grid-template-columns: repeat(5, 1fr);
     display: grid;
@@ -77,6 +89,7 @@ a:hover {
     width: 35vw;
     margin: .5rem;
     padding-left: .5rem;
+    padding-right: 3rem;
     position: fixed;
     display: block;
     overflow-y: scroll;
@@ -103,11 +116,16 @@ a:hover {
 #circle {
     height: 2rem;
     width: 2rem;
-    background-color: var(--color1);
+    background-color: var(--color2);
     border-radius: 50%;
-    border: 1px dashed var(--color2);
-    animation: rotate 25s linear infinite;
+    /* border: 1px dashed var(--color2); */
+    /* animation: rotate 25s linear infinite; */
 
+}
+
+#circle:hover {
+    background-color: var(--color1);
+    cursor: pointer;
 }
 
 @keyframes rotate {

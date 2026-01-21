@@ -102,10 +102,15 @@ a:hover {
 #circle {
     height: 2rem;
     width: 2rem;
-    background-color: var(--color1);
+    background-color: var(--color2);
     border-radius: 50%;
-    border: 1px dashed var(--color2);
-    animation: rotate 25s linear infinite;
+    /* border: 1px dashed var(--color2); */
+    /* animation: rotate 25s linear infinite; */
+}
+
+#circle:hover {
+    background-color: var(--color1);
+    cursor: pointer;
 }
 
 @keyframes rotate {
