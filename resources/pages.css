@@ -87,13 +87,22 @@ hr {
 
 #about2 {
     width: 35vw;
-    margin: .5rem;
+    /* margin: .5rem; */
     padding-left: .5rem;
     padding-right: 3rem;
     position: fixed;
     display: block;
     overflow-y: scroll;
     height: 95vh;
+}
+
+section::-webkit-scrollbar {
+  display: none;
+}
+
+section > *{
+ width: 100%;
+ /*padding: 0px 5px;*/
 }
 
 #images {

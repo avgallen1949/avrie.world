@@ -104,22 +104,12 @@ a:hover {
     width: 2rem;
     background-color: var(--color2);
     border-radius: 50%;
-    /* border: 1px dashed var(--color2); */
-    /* animation: rotate 25s linear infinite; */
+
 }
 
 #circle:hover {
     background-color: var(--color1);
     cursor: pointer;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .marquee {
