@@ -4,8 +4,13 @@
     font-family: "Routed", Arial, Helvetica, sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
 :root {
-  --color1: #f8d4f9;
+  --color1: #49a1ff;
   --color2: #b64901;
 }
 
@@ -87,7 +92,6 @@ hr {
 
 #about2 {
     width: 35vw;
-    /* margin: .5rem; */
     padding-left: .5rem;
     padding-right: 3rem;
     position: fixed;
@@ -150,8 +154,10 @@ section > *{
 #about, #about2 {
     position: relative;
     width: 80vw;
+    height: fit-content;
     margin: auto;
     margin-bottom: 2rem;
+    overflow: visible;
 }
 
 #images {

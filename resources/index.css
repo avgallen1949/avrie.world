@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color1: #f8d4f9;
+  --color1: #49a1ff;
   --color2: #b64901;
 }
 
@@ -95,10 +95,6 @@ a:hover {
     border-bottom: .5px solid var(--color2);
 }
 
-.script {
-    font-family: "Millionaire Italic", "Routed", Arial, Helvetica, sans-serif;
-}
-
 #circle {
     height: 2rem;
     width: 2rem;
@@ -119,7 +115,7 @@ a:hover {
   user-select: none;
   gap: var(--gap);
   position: fixed;
-  bottom: -.3rem;
+  bottom: -.2rem;
   left: 0;
 }
 
@@ -127,12 +123,13 @@ a:hover {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   min-width: 100vw;
   gap: var(--gap);
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
   color: var(--color2);
   align-items: baseline;
+  color: #f4f4f4;
 }
 
 #background {
@@ -142,7 +139,6 @@ a:hover {
     width: 100vw;
     height: 2.2rem;
     left:0;
-    border-top: solid .5px var(--color2);
 }
 
 @keyframes scroll {
