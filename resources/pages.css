@@ -92,8 +92,9 @@ hr {
 
 #about2 {
     width: 35vw;
-    padding-left: .5rem;
+    padding-left: 1rem;
     padding-right: 3rem;
+    padding-top: .5rem;
     position: fixed;
     display: block;
     overflow-y: scroll;
