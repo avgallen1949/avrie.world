@@ -5,7 +5,7 @@
 }
 
 :root {
-  --color1: #49a1ff;
+  --color1: #d7ff8e;
   --color2: #b64901;
 }
 
@@ -134,7 +134,7 @@ a:hover {
   animation: scroll 30s linear infinite;
   color: var(--color2);
   align-items: baseline;
-  color: #f4f4f4;
+  color: var(--color2);
 }
 
 #background {
