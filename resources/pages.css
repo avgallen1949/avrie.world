@@ -51,7 +51,8 @@ a:hover {
 }
 
 .smaller-text {
-    font-size: .9rem;
+    font-size: .75rem;
+    line-height: .5rem;
 }
 
 .underline {

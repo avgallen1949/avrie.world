@@ -45,6 +45,10 @@ html {
     margin-left: .25rem;
 }
 
+#mobile {
+    display: none;
+}
+
 #sections {
     grid-column: 3 / span 3;
     display: grid;
@@ -168,6 +172,14 @@ a:hover {
     width: 50vw;
     text-align: left;
     margin-bottom: 25vh;
+}
+
+#desktop {
+    display: none;
+}
+
+#mobile {
+    display: inline-block;
 }
 }
 
