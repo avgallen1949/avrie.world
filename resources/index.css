@@ -6,7 +6,7 @@
 
 :root {
   --color1: #d7ff8e;
-  --color2: #b64901;
+  --color2: #705643;
 }
 
 html {
@@ -101,16 +101,14 @@ a:hover {
 }
 
 #circle {
-    height: 2rem;
-    width: 2rem;
-    background-color: var(--color2);
-    border-radius: 50%;
-
-}
+    font-size: 3rem;
+    color: var(--color2);
+  }
 
 #circle:hover {
-    background-color: var(--color1);
+    color: var(--color1);
     cursor: pointer;
+     transition: color 0.3s ease;
 }
 
 .marquee {

@@ -10,8 +10,8 @@
 }
 
 :root {
-  --color1: #49a1ff;
-  --color2: #b64901;
+  --color1: #d7ff8e;
+  --color2: #705643;
 }
 
 html {
@@ -47,7 +47,7 @@ a:hover {
 
 .title {
     font-size: 1.5rem;
-    line-height: 1.5rem;
+    text-transform: uppercase;
 }
 
 .smaller-text {
@@ -66,7 +66,7 @@ hr {
 #page-structure {
     grid-template-columns: repeat(5, 1fr);
     display: grid;
-    width: 99vw;
+    width: 98vw;
     height: auto;
     color: var(--color2);
     margin: auto;
@@ -85,15 +85,14 @@ hr {
 
 #about {
     width: 25vw;
-    margin: .5rem;
-    padding-left: .5rem;
+    margin: .25rem;
+    margin-top: .5rem;
     position: fixed;
     display: block;
 }
 
 #about2 {
     width: 35vw;
-    padding-left: 1rem;
     padding-right: 3rem;
     padding-top: .5rem;
     position: fixed;
@@ -128,19 +127,16 @@ section > *{
     padding: 0;
 }
 
-#circle {
-    height: 2rem;
-    width: 2rem;
-    background-color: var(--color2);
-    border-radius: 50%;
-    /* border: 1px dashed var(--color2); */
-    /* animation: rotate 25s linear infinite; */
+#circle{
+    font-size: 3rem;
+    color: var(--color2);
 
-}
+    }
 
 #circle:hover {
-    background-color: var(--color1);
+    color: var(--color1);
     cursor: pointer;
+     transition: color 0.3s ease;
 }
 
 @keyframes rotate {
