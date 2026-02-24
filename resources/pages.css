@@ -15,7 +15,7 @@
 }
 
 html {
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     width: 100vw;
     height: auto;
 }
@@ -60,7 +60,7 @@ a:hover {
 }
 
 hr {
-    border: .5px dashed #b64901;
+    border: .5px dashed var(--color2);
 }
 
 #page-structure {
