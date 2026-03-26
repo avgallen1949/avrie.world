@@ -20,16 +20,6 @@ html {
     src: url(./routed-gothic.ttf);
 }
 
-@font-face {
-    font-family: "Millionaire";
-    src: url(./Millionaire-Script.otf);
-}
-
-@font-face {
-    font-family: "Millionaire Italic";
-    src: url(./Millionaire-Italic.otf);
-}
-
 #page-structure {
     grid-template-columns: repeat(5, 1fr);
     display: grid;

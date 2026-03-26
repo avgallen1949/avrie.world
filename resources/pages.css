@@ -25,16 +25,6 @@ html {
     src: url(./routed-gothic.ttf);
 }
 
-@font-face {
-    font-family: "Millionaire";
-    src: url(./Millionaire-Script.otf);
-}
-
-@font-face {
-    font-family: "Millionaire Italic";
-    src: url(./Millionaire-Italic.otf);
-}
-
 a {
     color:var(--color2);
     text-decoration: none;
@@ -46,8 +36,9 @@ a:hover {
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
+    display: block;
 }
 
 .smaller-text {
