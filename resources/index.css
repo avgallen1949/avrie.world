@@ -29,6 +29,10 @@ html {
     margin: auto;
 }
 
+.smaller {
+    font-size: .85rem;
+}
+
 #about {
     grid-column: 1 / span 1;
     margin-top: .5rem;
