@@ -44,9 +44,9 @@ html {
 }
 
 #sections {
-    grid-column: 3 / span 3;
+    grid-column: 4 / span 2;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     gap: 2rem;
     margin: .5rem;
