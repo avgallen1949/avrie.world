@@ -1,131 +1,90 @@
-<!doctype html>
-<html lang="en" class="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>avrie allen</title>
-    <link rel="stylesheet" href="./resources/index.css">
-
-    <link rel="icon" type="image/x-icon" href="./resources/favicon.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avrie Allen</title>
+  <link rel="stylesheet" href="./resources/index.css" />
 </head>
-
 <body>
-    <div id="page-structure">
-    <div id="about">
-            <div id="circle">❈</div><br>
-             <img id="work">
-            Avrie Allen is an interdisciplinary graphic designer pursuing her MFA at Rhode Island School of Design. You can email her at avrie.world at gmail dot com.</p>
-            <span class="buttons">
-            <!-- <a href="https://docs.google.com/document/d/1DpUTTgkAsWSf9xRMjcYLjo-2JsynQ67aU5D5ED2e510/edit?usp=sharing" target="_blank" id="desktop">CV</a>
-            <a href="https://docs.google.com/document/d/1DpUTTgkAsWSf9xRMjcYLjo-2JsynQ67aU5D5ED2e510/edit?tab=t.xvyx40a1owx1" target="_blank" id="mobile">CV</a> ∙  -->
-            <a href="https://www.are.na/avrie-allen/channels" target="_blank">✶✶</a> ∙ 
-            <a href="https://www.linkedin.com/in/avrieallen" target="_blank">LinkedIn</a>
-            </span>
-            <!-- <p>Sharing informal updates <a href="./updates.html">→ here.</a></p> -->
-            <p class="smaller"><a class="smaller" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">©CC BY-NC 4.0. 2026</a><br>Design and development by Avrie</p>
+
+  <div id="slideshow"></div>
+
+  <div id="dot"></div>
+
+  <div id="modal-overlay">
+    <div id="modal">
+      <button id="modal-close">✕</button>
+      <p>Avrie Allen is an interdisciplinary graphic designer pursuing her MFA at Rhode Island School of Design. You can email her at avrie.world at gmail dot com. 
+        <br><br>Images are connected through an are.na channel, you can view them and read project descriptions <a href="https://www.are.na/avrie-allen/portfolio-pix" target="_blank">✷ here.</a></p>
     </div>
-        <div id="sections">
-        <div id="personal">
-            <ul>
-                <li>SELECT WORK</li>
-                <li><a href="./girlhood-arrested.html">Girlhood Arrested<img class="follow" src="./resources/girlhood-arrested.png"></a></li>
-                <li><a href="./fragments.html">Fragments of a Future<img class="follow" src="./resources/fragments of the future small.png"></a></li>   
-                <li><a href="./measure.html">On Measurement<img class="follow" src="./resources/plates.png"></a></li>
-                <li><a href="./everydayutopia.html">everyday utopia<img class="follow" src="./resources/everydayutopia sm.png"></a></li>
-                <li><a href="./June78.html">The houses, the air, the streets<img class="follow" src="./resources/june78.png"></a></li>  
-                <li><a href="./history.html">End of History / History of the End<img class="follow" src="./resources/EOH.png"></a></li>
-                <!-- <li><a href="./luddite.html">luddite.com/munity<img class="follow" src="./resources/luddite.png"></a></li> -->
-                <li><a href="./emptypedestal.html">An Empty Pedestal is an Invitation<img class="follow" src="./resources/pedestal.png"></a></li>             
-                <!-- <li><a href="./nobreadallroses.html">no bread, all roses<img class="follow" src="./resources/no bread, all roses.png"></a></li> -->
-                <!-- <li><a href="./stencil.html">Stencil for Letters, Glyphs, and Patterns<img class="follow" src="./resources/stencil.png"></a></li>        -->
-            </ul>
-        </div>
+  </div>
 
-        <!-- <div>
-            <ul>
-                 <li>WEB DESIGN</li>
-                <li><a href="./triennial.html">RISD Graphic Design Triennial<img class="follow" src="./resources/triennial.png"></a></li>
-                <li><a href="./feministorganizingtoolkit.html">Feminist Organizing Toolkit<img class="follow" src="./resources/feminist organizing toolkit.png"></a></li>
-                <li><a href="./emptypedestal.html">An Empty Pedestal is an Invitation<img class="follow" src="./resources/pedestal.png"></a></li>
-                <li><a href="./noise.html">All Noise is Potential Signal<img class="follow" src="./resources/noise.png"></a></li>         
-            </ul>
-        </div> -->
+  <script>
+let contents = [];
+let currentIndex = 0;
+let intervalId = null;
 
-        <!-- <div id="publishing">
-            <ul>
-                <li>PUBLISHING</li>
-                <li><a href="./seedbook.html">Know-it-Yourself<img class="follow" src="./resources/Book06.png"></a></li>
-                <li><a href="./sand.html">Fresh Thyme Market is Turning to Sand<img class="follow" src="./resources/Fresh Thyme is Turning to Sand.png"></a></li>
-                <li><a href="./history.html">End of History / History of the End<img class="follow" src="./resources/EOH.png"></a></li>
-                <li><a href="./critical.html">Critical Zine<img class="follow" src="./resources/critical.png"></a></li>
+const slideshow = document.getElementById("slideshow");
+const dot = document.getElementById("dot");
+const overlay = document.getElementById("modal-overlay");
+const modalClose = document.getElementById("modal-close");
 
-            </ul>
-        </div> -->
+const getContent = function () {
+  fetch("https://api.are.na/v2/channels/portfolio-pix/contents?per=100&page=1")
+    .then((res) => res.json())
+    .then((data) => {
+      contents = data.contents
+        .filter((item) => item.image)
+        .sort(() => Math.random() - 0.5);
 
-        <!-- <div id="girlhood">
-            <ul>
-                <li>GIRLHOOD</li>
-                <li><a href="./girlhood-arrested.html">Girlhood Arrested<img class="follow" src="./resources/girlhood-arrested.png"></a></li>
-                <li><a href="./girlhoodredefined.html">girlhood redefined<img class="follow" src="./resources/girlhood.png"></a></li>
-                <li><a href="./girlhoodaftermath.html">Girlhood & its Aftermath<img class="follow" src="./resources/aftermath.png"></a></li>
-            </ul>
-            </div> -->
+      if (contents.length === 0) return;
 
-                <div id="client">
-            <ul>
-                <li>SELECT CLIENT WORK</li>
-                <li><a href="./risd.html">Rhode Island School of Design<img class="follow" src="./resources/grad studies.png"></a></li>
-                <li><a href="./kinseyinstitute.html">Kinsey Institute<img class="follow" src="./resources/Kinsey-Day.png"></a></li>
-                <!-- <li><a href="./womentechsummit.html">Women + Technology Summit<img class="follow" src="./resources/summit.png"></a></li> -->
-                <li><a href="./alo.html">Abolitionist Law Organization<img class="follow" src="./resources/ALO.png"></a></li>
-            </ul>
-        </div>
+      preloadImages(contents);
+      showFrame(0);
+      startCycle();
+    });
+};
 
-        <!-- <div id="teaching">
-            <ul>
-                 <li>TEACHING</li>
-                  <li><a href="./activating-networks-gathering-knowledge.html">Activating Networks, Gathering Knowledge<img class="follow" src="./resources/risd course.png"></a></li>
-                 <li><a href="./girlhood-zine-workshop.html">Girlhood Zine Workshop, the Visiting Room Project<img class="follow" src="./resources/zine workshop.png"></a></li>
-                 <li><a href="https://artsandlanguage.risd.edu/about" target="_blank">Peer Tutor, RISD Center for Arts & Language<img class="follow" src="./resources/a&l+logo+update_web-03.webp"></a></li>
-            </ul>
-        </div> -->
-
-        </div>
-    </div>
-<div id="background"></div>
-  <div class="marquee">
-  <ul class="marquee-content">
-    <li>CURRENTLY MFA @ RISD</li>
-    <li>•</li>
-    <li>I RECENTLY GAVE AN ARTIST TALK ON SENSE, GIRLHOOD, AND KNOWING AT FLEET LIBRARY</li>
-    <li>•</li>
-    <li>AND TAUGHT A CLASS ON PARTICIPATORY WEB ARCHIVES FOR CREATIVE RESEARCH @ RISD</li>
-    <li>•</li>
-    <li>LAST UPDATED 4.21.26</li>
-    <li>•</li>
-  </ul>
-  <ul class="marquee-content" aria-hidden="true">
-    <li>CURRENTLY MFA @ RISD</li>
-    <li>•</li>
-    <li>I RECENTLY GAVE AN ARTIST TALK ON SENSE, GIRLHOOD, AND KNOWING AT FLEET LIBRARY</li>
-    <li>•</li>
-    <li>AND TAUGHT A CLASS ON PARTICIPATORY WEB ARCHIVES FOR CREATIVE RESEARCH @ RISD</li>
-    <li>•</li>
-    <li>LAST UPDATED 4.21.26</li>
-    <li>•</li>
-  </ul>
-</div>
-
-
-  <script type="text/javascript">
-$(document).mousemove(function(e) {
-  $(".follow").css({
-    left: e.pageX,
-    top: e.pageY
+const preloadImages = function (items) {
+  items.forEach((item, i) => {
+    const img = document.createElement("img");
+    img.src = item.image.display.url;
+    img.dataset.index = i;
+    slideshow.appendChild(img);
   });
+};
+
+const showFrame = function (index) {
+  const imgs = slideshow.querySelectorAll("img");
+  imgs.forEach((img, i) => {
+    img.classList.toggle("active", i === index);
+  });
+};
+
+const startCycle = function () {
+  if (intervalId) clearInterval(intervalId);
+  intervalId = setInterval(() => {
+    currentIndex = (currentIndex + 1) % contents.length;
+    showFrame(currentIndex);
+  }, 2000);
+};
+
+dot.addEventListener("click", () => {
+  overlay.classList.add("open");
 });
+
+modalClose.addEventListener("click", () => {
+  overlay.classList.remove("open");
+});
+
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) overlay.classList.remove("open");
+});
+
+getContent();
+
   </script>
+
 </body>
 </html>
